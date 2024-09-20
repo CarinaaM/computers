@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Many Computers in the Room?</title>
+</head>
+<body>
+    <h1>How Many Computers in the Room?</h1>
+    <p>0</p>
+    <button id="subtract">⬅️</button>
+    <button id="answer">🔘</button>
+    <button id="add">➡️</button>
+
+    
+
+    <script>
+        var answer = "3B";
+        const p = document.querySelector('p');
+        const add = document.querySelector('#add');
+        const subtract = document.querySelector('#subtract');
+        const answerButton = document.querySelector('#answer');
+
+        let count = 0;
+
+        add.addEventListener('click', () => {
+            count++;
+            p.textContent = count;
+        });
+
+        subtract.addEventListener('click', () => {
+            if(count >0){
+                count--;
+            p.textContent = count;
+            }
+        });
+
+        answerButton.addEventListener('click', () => {
+            if(count == parseInt(answer,16)){
+                alert('Correct! 🎉');
+                
+            } else {
+                alert('Try again! 🤔');
+            }
+        });
+
+    </script>
+</body>
+</html>
